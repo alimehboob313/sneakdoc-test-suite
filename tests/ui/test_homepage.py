@@ -7,7 +7,7 @@ from pages.homepage import HomePage
 
 def test_homepage_loads():
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
+        browser = p.chromium.launch(headless=True)
         page = browser.new_page()
 
         home = HomePage(page)
@@ -19,7 +19,7 @@ def test_homepage_loads():
 
 def test_shop_now_navigates_to_store():
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
+        browser = p.chromium.launch(headless=True)
         page = browser.new_page()
 
         home = HomePage(page)
