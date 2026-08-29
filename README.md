@@ -34,6 +34,11 @@ pip install pytest playwright requests
 playwright install
 pytest tests/ui/ -v
 ```
+## Known CI Limitation
+
+The GitHub Actions CI pipeline may show test failures that do **not** occur locally. This is because SneakDoc's hosting has bot-protection (challenge/verification pages) that treats GitHub's shared cloud IP ranges as suspicious traffic, and serves a "Security Verification" page instead of the real site.
+
+This is an infrastructure-level constraint, not a bug in the tests themselves — the same test suite passes reliably when run locally, where requests come from a normal residential IP. Handling this properly (e.g. IP allowlisting on the hosting side, or running against a staging environment without bot protection) is a common real-world CI/CD challenge for testing production sites with security layers.
 
 ## Related Project
 
