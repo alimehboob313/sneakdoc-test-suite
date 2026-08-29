@@ -14,7 +14,7 @@ class HomePage:
         self.page.goto(self.url)
 
     def click_shop_now(self):
-        self.shop_now_button.click()
+        self.shop_now_button.click(force=True)
         self.page.wait_for_load_state("networkidle")
 
     def click_all_products(self):
